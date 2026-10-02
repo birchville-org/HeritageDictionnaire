@@ -8,7 +8,7 @@ outline: false
 
 <div class="dict-page-header">
   <span class="badge-count">819 entrées</span>
-  <a href="/" class="back-link">← Index du dictionnaire</a>
+  <a href="../" class="back-link">← Index du dictionnaire</a>
 </div>
 
 ---

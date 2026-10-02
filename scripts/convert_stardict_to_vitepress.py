@@ -329,7 +329,7 @@ def main():
             f.write(f"# <span class=\"deva-large\">{deva_letter}</span> <span class=\"iast-large\">{iast_letter}</span>\n\n")
             f.write(f"<div class=\"dict-page-header\">\n")
             f.write(f"  <span class=\"badge-count\">{len(letter_entries)} entrées</span>\n")
-            f.write(f"  <a href=\"/\" class=\"back-link\">← Index du dictionnaire</a>\n")
+            f.write(f"  <a href=\"../\" class=\"back-link\">← Index du dictionnaire</a>\n")
             f.write(f"</div>\n\n")
             f.write(f"---\n\n")
             

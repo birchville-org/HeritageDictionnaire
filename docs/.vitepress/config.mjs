@@ -16,8 +16,10 @@ export default defineConfig({
     code = code.replace('<html', '<html translate="no" class="notranslate"')
     const base = process.env.GITHUB_ACTIONS ? '/HeritageDictionnaire/' : '/'
     if (base !== '/') {
-      code = code.replaceAll('href="/HeritageDictionnaire_indexed.pdf"', f'href="{base}HeritageDictionnaire_indexed.pdf"')
-      code = code.replaceAll('href="/birchville_logo.png"', f'href="{base}birchville_logo.png"')
+      code = code.replaceAll('href="/HeritageDictionnaire_indexed.pdf"', `href="${base}HeritageDictionnaire_indexed.pdf"`)
+      code = code.replaceAll('href="/birchville_logo.png"', `href="${base}birchville_logo.png"`)
+      code = code.replaceAll('href="/" class="back-link"', `href="${base}" class="back-link"`)
+      code = code.replaceAll('class="back-link" href="/"', `class="back-link" href="${base}"`)
     }
     return code
   },
