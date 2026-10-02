@@ -6,11 +6,15 @@ export default defineConfig({
   description: "Dictionnaire sanskrit-français de Gérard Huet (INRIA) - Édition numérique interactive",
   lang: 'fr-FR',
   head: [
+    ['meta', { name: 'google', content: 'notranslate' }],
     ['link', { rel: 'icon', href: '/birchville_logo.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap' }]
   ],
+  transformHtml(code) {
+    return code.replace('<html', '<html translate="no" class="notranslate"')
+  },
   themeConfig: {
     logo: '/birchville_logo.png',
     siteTitle: 'Héritage du Sanskrit',
