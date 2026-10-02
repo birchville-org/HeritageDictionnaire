@@ -1,5 +1,11 @@
 # Héritage du Sanskrit — Dictionnaire sanskrit-français (VitePress & PDF Indexé)
 
+[![Deploy VitePress to GitHub Pages](https://github.com/birchville-org/HeritageDictionnaire/actions/workflows/deploy.yml/badge.svg)](https://github.com/birchville-org/HeritageDictionnaire/actions/workflows/deploy.yml)
+[![Live Service](https://img.shields.io/badge/Live_Service-github.io-b45309?style=flat&logo=github)](https://birchville-org.github.io/HeritageDictionnaire/)
+
+> 🌐 **Service en ligne (GitHub Pages) :**  
+> **[https://birchville-org.github.io/HeritageDictionnaire/](https://birchville-org.github.io/HeritageDictionnaire/)**
+
 Ce projet modernise et enrichit l'accès lexicographique au dictionnaire *Héritage du Sanskrit* de **Gérard Huet** (INRIA Paris, version 3.75 / 3.84). Il combine deux réalisations majeures :
 
 1. **Document Outlines (Signets hiérarchiques)** injectés directement dans le PDF de 1217 pages sans altérer la mise en page TeX.
