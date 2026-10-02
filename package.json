@@ -1,0 +1,15 @@
+{
+  "name": "heritage-dictionnaire",
+  "version": "1.0.0",
+  "description": "Dictionnaire sanskrit-français (Gérard Huet) - Édition numérique interactive VitePress",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "index:pdf": "python3 scripts/index_pdf.py",
+    "build:dict": "python3 scripts/convert_stardict_to_vitepress.py"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

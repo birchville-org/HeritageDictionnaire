@@ -1,0 +1,191 @@
+/* Birchville Scholarly Synthesis Standard */
+:root {
+  --vp-c-bg: #fcf9f2;
+  --vp-c-bg-alt: #f1eee7;
+  --vp-c-bg-elv: #fcf9f2;
+  --vp-c-bg-soft: #f1eee7;
+  --vp-c-text-1: #03192e;
+  --vp-c-text-2: #1e2d37;
+  --vp-c-text-3: #6b6257;
+  --vp-c-divider: #d8d2c6;
+  --vp-c-border: #d8d2c6;
+  --vp-c-brand-1: #b45309;
+  --vp-c-brand-2: #d97706;
+  --vp-c-brand-3: #92400e;
+  --vp-c-brand-soft: rgba(180, 83, 9, 0.12);
+
+  --skt-deva-font: 'Noto Serif Devanagari', serif;
+  --skt-text-font: 'Inter', sans-serif;
+}
+
+.dark {
+  --vp-c-bg: #0a1628;
+  --vp-c-bg-alt: #0f1e35;
+  --vp-c-bg-elv: #0f1e35;
+  --vp-c-bg-soft: #0f1e35;
+  --vp-c-text-1: #e8e0d3;
+  --vp-c-text-2: #c4bba5;
+  --vp-c-text-3: #a09080;
+  --vp-c-divider: #334155;
+  --vp-c-border: #334155;
+  --vp-c-brand-1: #eab308;
+  --vp-c-brand-2: #facc15;
+  --vp-c-brand-3: #ca8a04;
+  --vp-c-brand-soft: rgba(234, 179, 8, 0.15);
+}
+
+.VPNavBarTitle .logo {
+  height: 2.1rem;
+  border-radius: 4px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.18));
+}
+
+/* Devanagari display */
+.deva, .skt-deva, .deva-large {
+  font-family: var(--skt-deva-font);
+  font-feature-settings: "kern", "liga", "dlig";
+}
+
+.deva-large {
+  font-size: 2.2rem;
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.iast-large {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+/* Dictionary Entry styling */
+.skt-entry {
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border-left: 3px solid var(--vp-c-brand-1);
+  transition: all 0.15s ease;
+}
+
+.skt-entry:hover {
+  background-color: var(--vp-c-bg-mute);
+  transform: translateX(2px);
+}
+
+.skt-entry .deva {
+  font-size: 1.25rem;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.skt-grammar {
+  color: #dc2626;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.skt-root {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.skt-proper {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.skt-pipe {
+  color: #f59e0b;
+  font-weight: bold;
+  margin: 0 6px;
+}
+
+.skt-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.skt-link:hover {
+  text-decoration: underline;
+}
+
+/* Header badge and breadcrumbs on dict pages */
+.dict-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 24px 0;
+}
+
+.badge-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Alphabet Grid on Home */
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 24px 0 36px 0;
+}
+
+.alphabet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.alphabet-card:hover {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.alphabet-card .grid-deva {
+  font-family: var(--skt-deva-font);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+  line-height: 1.1;
+}
+
+.alphabet-card .grid-iast {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-top: 4px;
+}
+
+.alphabet-card .grid-count {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  margin-top: 2px;
+}
