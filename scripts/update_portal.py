@@ -121,6 +121,16 @@ def transform_html(content: str) -> str:
         ".contact-form button:hover { background: var(--brand-2); color: var(--on-brand); }"
     )
 
+    # 7. Hero subtitle
+    content = content.replace(
+        "<p>Selbstgehostete Dienste auf eigener Infrastruktur.</p>",
+        "<p>Marco's reputable playground for philological texts and services</p>"
+    )
+    content = content.replace(
+        "<p>Selbstgehostete Dienste auf eigener Infrastruktur</p>",
+        "<p>Marco's reputable playground for philological texts and services</p>"
+    )
+
     return content
 
 def main():
