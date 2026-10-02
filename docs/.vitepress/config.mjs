@@ -13,7 +13,13 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap' }]
   ],
   transformHtml(code) {
-    return code.replace('<html', '<html translate="no" class="notranslate"')
+    code = code.replace('<html', '<html translate="no" class="notranslate"')
+    const base = process.env.GITHUB_ACTIONS ? '/HeritageDictionnaire/' : '/'
+    if (base !== '/') {
+      code = code.replaceAll('href="/HeritageDictionnaire_indexed.pdf"', f'href="{base}HeritageDictionnaire_indexed.pdf"')
+      code = code.replaceAll('href="/birchville_logo.png"', f'href="{base}birchville_logo.png"')
+    }
+    return code
   },
   themeConfig: {
     logo: '/birchville_logo.png',
