@@ -1,20 +1,32 @@
 import { defineConfig } from 'vitepress'
 
+const base = process.env.GITHUB_ACTIONS ? '/HeritageDictionnaire/' : '/'
+
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/HeritageDictionnaire/' : '/',
+  base,
   title: "Héritage du Sanskrit",
   description: "Dictionnaire sanskrit-français de Gérard Huet (INRIA) - Édition numérique interactive",
   lang: 'fr-FR',
   head: [
     ['meta', { name: 'google', content: 'notranslate' }],
-    ['link', { rel: 'icon', href: '/birchville_logo.png' }],
+    ['link', { rel: 'icon', href: `${base}birchville_logo.png` }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap' }]
   ],
+  transformPageData(pageData) {
+    if (pageData.frontmatter?.hero?.actions) {
+      for (const action of pageData.frontmatter.hero.actions) {
+        if (action.link && action.link.endsWith('.pdf')) {
+          if (base !== '/' && !action.link.startsWith(base)) {
+            action.link = `${base}${action.link.replace(/^\//, '')}`
+          }
+        }
+      }
+    }
+  },
   transformHtml(code) {
     code = code.replace('<html', '<html translate="no" class="notranslate"')
-    const base = process.env.GITHUB_ACTIONS ? '/HeritageDictionnaire/' : '/'
     if (base !== '/') {
       code = code.replaceAll('href="/HeritageDictionnaire_indexed.pdf"', `href="${base}HeritageDictionnaire_indexed.pdf"`)
       code = code.replaceAll('href="/birchville_logo.png"', `href="${base}birchville_logo.png"`)
@@ -98,7 +110,7 @@ export default defineConfig({
           { text: 'Sibilantes & H (श à ह)', link: '/dict/sha' }
         ]
       },
-      { text: '📥 PDF Indexé (1217 p.)', link: '/HeritageDictionnaire_indexed.pdf', target: '_blank' }
+      { text: '📥 PDF Indexé (1217 p.)', link: `${base}HeritageDictionnaire_indexed.pdf`, target: '_blank' }
     ],
     sidebar: {
       '/intro/': [
