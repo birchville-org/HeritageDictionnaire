@@ -10,6 +10,13 @@ export default defineConfig({
   head: [
     ['meta', { name: 'google', content: 'notranslate' }],
     ['link', { rel: 'icon', href: `${base}birchville_logo.png` }],
+    ['link', { rel: 'apple-touch-icon', href: `${base}og-icon.png` }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:image', content: 'https://birchville-org.github.io/HeritageDictionnaire/og-icon.png' }],
+    ['meta', { property: 'og:image:width', content: '128' }],
+    ['meta', { property: 'og:image:height', content: '128' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:image', content: 'https://birchville-org.github.io/HeritageDictionnaire/og-icon.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap' }]
